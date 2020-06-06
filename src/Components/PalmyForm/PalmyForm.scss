@@ -1,0 +1,68 @@
+$primary: #38e4ae;
+$secondary: #607466;
+$terciary: #aedcc0;
+$bg: #343e3d;
+$accent: #7bd389;
+
+$default-padding: 20px;
+
+$body-font: 'Roboto', sans-serif;
+$body-font-weight: regular;
+
+$head-font: 'Roboto', sans-serif;
+$head-weight: 'black';
+
+$lg-cont-height: 500px;
+$lg-cont-width: 300px;
+
+@mixin bodyFont($ff: $body-font, $fw: $body-font-weight) {
+  font-family: $ff;
+  font-weight: $fw;
+}
+
+@mixin headingFont($hf: $head-font, $hw: $head-weight) {
+  font-family: $hf;
+  font-weight: $hw;
+}
+
+@mixin pad($n: $default-padding) {
+  padding: $n;
+}
+
+@mixin flex($fd: row, $jc: center, $ai: center) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+.palmy-form {
+  @include pad(50px);
+  height: $lg-cont-height;
+  width: $lg-cont-width;
+  border: 1px solid black;
+  border-radius: 20px;
+  @include flex(column);
+  form {
+    @include flex(column);
+    width: 100%;
+    height: 100%;
+    input {
+      border-radius: 10px;
+      @include pad(10px);
+      margin-bottom: 10px;
+    }
+    label {
+      width: 100%;
+    }
+    .btn {
+      @include pad(5em);
+    }
+  }
+}
+
+.App {
+  @include flex();
+  height: 100vh;
+  width: 100vw;
+}
